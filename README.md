@@ -1,0 +1,2 @@
+# psadblock
+PowerShell AdBlock Script
