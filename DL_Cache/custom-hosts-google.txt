@@ -1,0 +1,23 @@
+#Additional google ad servers to block
+0.0.0.0	4.afs.googleadservices.com
+0.0.0.0	ad.doubleclick.net
+0.0.0.0	ads.imeem.com
+0.0.0.0	auto.search.msn.com
+0.0.0.0	cdn.fastclick.net
+0.0.0.0	csi.gstatic.com
+0.0.0.0	ebay.doubleclick.net
+0.0.0.0	googleads.g.doubleclick.net
+0.0.0.0	google-analytics.com
+0.0.0.0	media.fastclick.net
+0.0.0.0	pagead2.googleadservices.com
+0.0.0.0	partner.googleadservices.com
+0.0.0.0	s0.2mdn.net
+0.0.0.0	sitefinder.verisign.com
+0.0.0.0	sitefinder-idn.verisign.com
+0.0.0.0	ssl.google-analytics.com
+0.0.0.0	stat.livejournal.com
+0.0.0.0	stats.surfaid.ihost.com
+0.0.0.0	www.googleadservices.com
+0.0.0.0	www.google-analytics.com
+0.0.0.0	www.google-analytics.l.google.com
+0.0.0.0	www.googletagservices.com
