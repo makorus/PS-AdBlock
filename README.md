@@ -1,6 +1,10 @@
 # PS AdBlock
 PowerShell-based AdBlock Script
 
+Author:            Makorus
+XDA Profile Link:  http://forum.xda-developers.com/member.php?u=4881417
+XDA DevDB Link:    http://forum.xda-developers.com/showpost.php?p=60616282
+
 This script does exactly what you think: It grabs various "hosts" sources from the internet, saves them locally, and merges them to one big file. Enjoy an ad-free Windows experience.
 
 - Download as many "hosts" files as you want
