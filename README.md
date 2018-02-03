@@ -1,4 +1,4 @@
-# psadblock
+# PS AdBlock
 PowerShell-based AdBlock Script
 
 This script does exactly what you think: It grabs various "hosts" sources from the internet, saves them locally, and merges them to one big file. Enjoy an ad-free Windows experience.
