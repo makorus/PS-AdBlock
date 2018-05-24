@@ -3,7 +3,7 @@ PowerShell-based AdBlock Script by Makorus<br />
 
 XDA DevDB Link:    http://forum.xda-developers.com/showpost.php?p=60616282<br />
 
-This script does exactly what you think: It grabs various "hosts" sources from the internet, saves them locally, and merges them to one big file. Enjoy an ad-free Windows experience.
+This script does exactly what you think: It grabs various "hosts" sources from the internet, saves them locally, and merges them to one big file. Enjoy an ad-free Windows experience.<br />
 
 * Download as many "hosts" files as you want
 * Merge them automatically into one big "hosts" file
@@ -25,7 +25,10 @@ This script does exactly what you think: It grabs various "hosts" sources from t
 * If you experience performance issues like extremely slow Windows startup time, try to disable the client DNS Cache service via CMD:
   * sc config dnscache start= disabled
 
-## Change Log (most recent version first, date format yyyy-MM-dd)
+
+## Change Log
+**Most recent version first, date format _yyyy-MM-dd_**
+
 ### V1.6.4, 2018-05-24
 * Moved comments from main PowerShell script file to README.md
 * Fixed wrong version number in main PowerShell script file (typo)
