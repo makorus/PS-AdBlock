@@ -32,6 +32,9 @@ This script does exactly what you think: It grabs various "hosts" sources from t
 ### V1.6.4, 2018-05-24
 * Moved comments from main PowerShell script file to README.md
 * Fixed wrong version number in main PowerShell script file (typo)
+* Added two new hosts source providers:
+  * https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt
+  * https://raw.githubusercontent.com/greatis/Anti-WebMiner/master/hosts
 
 ### V1.6.3, 2018-02-03
 * Added logic to handle 'localhost' in whitelist (thanks to antonio-gil)
