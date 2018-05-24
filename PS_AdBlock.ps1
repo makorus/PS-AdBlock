@@ -408,7 +408,9 @@ Else
   "http://winhelp2002.mvps.org/hosts.txt",
   "http://adaway.org/hosts.txt",
   "http://pgl.yoyo.org/as/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext",
-  "http://www.malwaredomainlist.com/hostslist/hosts.txt"
+  "http://www.malwaredomainlist.com/hostslist/hosts.txt",
+  "https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt",
+  "https://raw.githubusercontent.com/greatis/Anti-WebMiner/master/hosts"
   $HostSources = $DefaultHostSources
 }
 #endregion Host Sources
