@@ -9,20 +9,20 @@
 #Get current time, needed to calculate the execution time at the end
 $ScriptStartTime = (Get-Date)
 
+#Current script version
+New-Variable "PSScriptVersion" -Option "Constant" -Value "1.6.5" -ErrorAction "SilentlyContinue"
+
 #DebugMode skips the download and patch process, set "-Value" to "$true" to activate
-New-Variable "DebugMode" -Option "Constant" -Value "$false"
+New-Variable "DebugMode" -Option "Constant" -Value "$false" -ErrorAction "SilentlyContinue"
 
 #Automatic 'hosts' backup routine, set to "$false" to disable
-New-Variable "HostsBackup" -Option "Constant" -Value "$true"
+New-Variable "HostsBackup" -Option "Constant" -Value "$true" -ErrorAction "SilentlyContinue"
 
 #Automatic 'hosts' apply routine, set to "$false" to disable
-New-Variable "HostsAutoApply" -Option "Constant" -Value "$true"
-
-#Current script version
-New-Variable "PSScriptVersion" -Option "Constant" -Value "1.6.4"
+New-Variable "HostsAutoApply" -Option "Constant" -Value "$true" -ErrorAction "SilentlyContinue"
 
 #Line separator for better readability
-New-Variable "LineSeparator" -Option "Constant" -Value "***************************************************************************************************"
+New-Variable "LineSeparator" -Option "Constant" -Value "***************************************************************************************************" -ErrorAction "SilentlyContinue"
 
 #Get working path for PS1 file
 $PSScriptRoot = Split-Path (Resolve-Path $myInvocation.MyCommand.Path)
@@ -383,7 +383,7 @@ If ($($PSVersionTable.PSVersion.Major) -lt 3)
 #########################################################################################
 ## Notes:                                                                              ##
 ## - Add these host names to the patch list below to avoid conflicts                   ##
-## - When adding custom sources, please make sure that the very last enTry of this     ##
+## - When adding custom sources, please make sure that the very last entry of this     ##
 ##   array has NO comma (,) at the end, only host sources above the last line need it! ##
 #########################################################################################
 [String[]]$HostSources = ""
@@ -426,7 +426,7 @@ Else
 #########################################################################################
 ## Notes:                                                                              ##
 ## - To add custom host names to your whitelist, edit the whitelist.ini file or        ##
-##   simply add a new enTry, e.g.:                                                     ##
+##   simply add a new entry, e.g.:                                                     ##
 ##   $PatchTable.Add('your-web-site.com', '')                                          ##
 ##   Syntax: $PatchTable.Add('replace-THIS', '')                                       ##
 #########################################################################################
@@ -444,7 +444,7 @@ If (Test-Path -Path $WhiteList)
 }
 Else
 {
-  Log-Write -LogPath ".\$PSLogFileName" -LineValue "Didn't find existing whitelist.ini file - using default list..."
+  Log-Write -LogPath ".\$PSLogFileName" -LineValue "Couldn't find existing whitelist.ini file - using default list..."
   $DefaultPatchTable = New-Object System.Collections.Specialized.OrderedDictionary
   $DefaultPatchTable.Add("hostsfile.org", "")
   $DefaultPatchTable.Add("someonewhocares.org", "")
@@ -452,6 +452,7 @@ Else
   $DefaultPatchTable.Add("adaway.org", "")
   $DefaultPatchTable.Add("pgl.yoyo.org", "")
   $DefaultPatchTable.Add("malwaredomainlist.com", "")
+  $DefaultPatchTable.Add("raw.githubusercontent.com", "")
   $DefaultPatchTable.Add("bit.ly", "")
   $DefaultPatchTable.Add("spotify.com", "")
   $DefaultPatchTable.Add("skype.com", "")
@@ -545,8 +546,8 @@ Try
       }
       Else
 	  {
-        $NewHost = $ToBeReplaced.Replace(".", ".\")
-        $PlainText = $PlainText -ireplace $("^0.0.0.0 ([A-Za-z0-9.-]*\.)?$ToBeReplaced"), $NewHost
+        $NewHost = "0.0.0.0 localhost"
+        $PlainText = $PlainText -ireplace $("^0.0.0.0 ([A-Za-z0-9.-]*\.)?$ToBeReplaced\Z"), $NewHost
       }
     }
     Log-Write -LogPath ".\$PSLogFileName" -LineValue "Successfully finished apply process!"
