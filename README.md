@@ -29,6 +29,11 @@ This script does exactly what you think: It grabs various "hosts" sources from t
 ## Change Log
 **Most recent version first, date format _yyyy-MM-dd_**
 
+### V1.6.5, 2018-07-03
+* Fixed bug with patch table handling; If a whitelisted host was found in the original file, it would've been successfully replaced but it also did add the line which was used for the regex replace function (e.g. allow "spotify.com", you'd find "spotify.\com" at the end of your 'hosts' file)
+* Added error action "SilentlyContinue" for the variables at the beginning to avoid error messages when you run the script via PowerShell ISE
+* Moved version variable to the top
+
 ### V1.6.4, 2018-05-24
 * Moved comments from main PowerShell script file to README.md
 * Fixed wrong version number in main PowerShell script file (typo)
