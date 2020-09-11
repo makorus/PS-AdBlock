@@ -25,6 +25,11 @@ This script does exactly what you think: It grabs various "hosts" sources from t
 * If you experience performance issues like extremely slow Windows startup time, try to disable the client DNS Cache service via CMD:
   * sc config dnscache start= disabled
 
+## Planned features
+- [ ] Add new file 'options.ini' where some settings can be changed (rather than changing them within the script itself)
+- [ ] Handle Windows Security exclusion
+- [ ] Add new hosts sources
+- [ ] More to come
 
 ## Change Log
 **Most recent version first, date format _yyyy-MM-dd_**
